@@ -21,8 +21,8 @@ public class Gun : MonoBehaviour
         rotationX -= mousePos.y/10f;
         rotationY += mousePos.x/10f;
 
-        rotationX = Mathf.Clamp(rotationX, -5f, 5f);
-        rotationY = Mathf.Clamp(rotationY, -5, 5f);
+        rotationX = Mathf.Clamp(rotationX, -3f, 0f);
+        rotationY = Mathf.Clamp(rotationY, -3, 3f);
 
         transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0f);
 
@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
             var position = transform.position;
             
             bullet.gameObject.SetActive(true);
-            bullet.transform.position = new Vector3(position.x, position.y, position.z+0.2f);
+            bullet.transform.position = new Vector3(position.x, position.y+0.06f, position.z+0.3f);
             bullet.Move(new Vector3(mousePos.x, mousePos.y, mousePos.z));
         }
     }
