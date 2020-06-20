@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private Animator _animator;
     private Collider _activationArea;
+    private Vector3 _startPosition;
     private List<Collider> _colliders;
     private List<Rigidbody> _rigidbodies;
     
@@ -15,9 +16,19 @@ public class Enemy : MonoBehaviour
         SetRigidbodiesState(false);
         SetRagdollCollidersState(true);
     }
+
+    public void ResetEnemy()
+    {
+        SlowMotion.DisableSlowMotion();
+        transform.position = _startPosition;
+        SetRagdollCollidersState(false);
+        SetRigidbodiesState(true);
+        _animator.enabled = true;
+    }
     
     private void Awake()
     {
+        _startPosition = transform.position;
         _animator = GetComponent<Animator>();
         _activationArea = GetComponent<Collider>();
         _colliders = GetComponentsInChildren<Collider>().ToList();
