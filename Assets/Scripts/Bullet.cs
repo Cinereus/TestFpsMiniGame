@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScriptableObjects;
+using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class Bullet : MonoBehaviour
 
         if (distance >= 0.001f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _target, _speed);
+            transform.position = Vector3.MoveTowards(transform.position, _target, _speed*Time.timeScale);
             Debug.Log(distance);
         }
         else
@@ -49,13 +50,14 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.ActivateRagdoll();
+            return;
         }
-
-        if (other.CompareTag("RagdollPart"))
+        
+        var enemyPart = other.GetComponent<EnemyPart>();
+        
+        if (enemyPart != null)
         {
-            Debug.Log("KEK");
-            var rb = other.GetComponent<Rigidbody>();
-            rb.AddForce(Vector3.forward * _blowStrength, ForceMode.Impulse);
+            enemyPart.GetShot(_blowStrength);
             Destroy(gameObject);
         }
     }
