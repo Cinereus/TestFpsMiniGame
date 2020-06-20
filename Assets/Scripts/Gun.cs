@@ -5,8 +5,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject _bullet;
     
     private Camera _camera;
-    private float rotationX;
-    private float rotationY;
+    private float _rotationX;
+    private float _rotationY;
     
     private void Awake()
     {
@@ -18,13 +18,13 @@ public class Gun : MonoBehaviour
         var isButtonPressed = Input.GetMouseButtonDown(0);
         var mousePos = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
 
-        rotationX -= mousePos.y/10f;
-        rotationY += mousePos.x/10f;
+        _rotationX -= mousePos.y/10f;
+        _rotationY += mousePos.x/10f;
 
-        rotationX = Mathf.Clamp(rotationX, -3f, 0f);
-        rotationY = Mathf.Clamp(rotationY, -3, 3f);
+        _rotationX = Mathf.Clamp(_rotationX, -3f, 0f);
+        _rotationY = Mathf.Clamp(_rotationY, -3, 3f);
 
-        transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0f);
+        GetComponent<Rigidbody>().rotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
 
         if (isButtonPressed)
         {

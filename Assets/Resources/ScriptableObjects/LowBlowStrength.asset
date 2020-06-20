@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d55a32c7c106b241a994e6fa18dad94, type: 3}
   m_Name: LowBlowStrength
   m_EditorClassIdentifier: 
-  BlowStrength: 1
+  Speed: 0.3
+  BlowStrength: 40
