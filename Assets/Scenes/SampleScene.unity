@@ -1234,6 +1234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 831956610}
+  _shootRange: 10
 --- !u!1 &763732505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1836615893786013965, guid: 6dc4cf4496348884d8ee27743ae38562,
@@ -1296,6 +1297,7 @@ GameObject:
   - component: {fileID: 831956611}
   - component: {fileID: 831956615}
   - component: {fileID: 831956616}
+  - component: {fileID: 831956617}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1406,6 +1408,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &831956617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831956610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a5cac9b90f62247bf6385aef047d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &897575362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7478079058741212813, guid: 6dc4cf4496348884d8ee27743ae38562,
