@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccae522c70777814db893f8f58bf836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowMotionEffect: 0
+  _slowMotionEffect: 1
 --- !u!1 &523994134 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7532005085892297706, guid: 6dc4cf4496348884d8ee27743ae38562,
@@ -802,19 +802,6 @@ CapsuleCollider:
   m_Height: 0.2657414
   m_Direction: 0
   m_Center: {x: -0.1328707, y: 0, z: 0}
---- !u!114 &523994139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523994134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccae522c70777814db893f8f58bf836c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slowMotionEffect: 0
 --- !u!114 &523994140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccae522c70777814db893f8f58bf836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowMotionEffect: 0
+  _slowMotionEffect: 1
 --- !u!1 &659018783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1840469243636615951, guid: 6dc4cf4496348884d8ee27743ae38562,
@@ -920,7 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccae522c70777814db893f8f58bf836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowMotionEffect: 0
+  _slowMotionEffect: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccae522c70777814db893f8f58bf836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowMotionEffect: 0
+  _slowMotionEffect: 1
 --- !u!1 &745190710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,7 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccae522c70777814db893f8f58bf836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowMotionEffect: 0
+  _slowMotionEffect: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,7 +1994,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1293419350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1163272115}
+        m_MethodName: ResetEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1293419350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2138,7 +2136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccae522c70777814db893f8f58bf836c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowMotionEffect: 0
+  _slowMotionEffect: 1
 --- !u!1 &1748133448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 718708696564122599, guid: 6dc4cf4496348884d8ee27743ae38562,

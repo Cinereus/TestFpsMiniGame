@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
         _rotationX = Mathf.Clamp(_rotationX, -3f, 0f);
         _rotationY = Mathf.Clamp(_rotationY, -3, 3f);
 
-        GetComponent<Rigidbody>().rotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
+        transform.rotation = Quaternion.Euler(_rotationX, _rotationY, 0f);
 
         if (isButtonPressed)
         {
