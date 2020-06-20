@@ -3,12 +3,12 @@
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private BulletStats _stats;
-    
+
     private bool _isCanMove;
     private float _speed;
     private float _blowStrength;
     private Vector3 _target;
-    
+
     void Awake()
     {
         _speed = _stats.Speed;
@@ -23,14 +23,14 @@ public class Bullet : MonoBehaviour
         }
 
         var distance = Vector3.Distance(transform.position, _target);
-        
+
         if (distance >= 0.001f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _target, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, _target, _speed);
+            Debug.Log(distance);
         }
         else
         {
-            Debug.Log(distance);
             //replace to pool object
             Destroy(gameObject);
         }
@@ -44,10 +44,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Zombie"))
+        var enemy = other.GetComponent<Enemy>();
+        
+        if (enemy != null)
         {
-            other.GetComponent<Rigidbody>().AddForce(Vector3.forward*_blowStrength, ForceMode.Impulse);
-            //return to pool stuff
+            enemy.ActivateRagdoll();
+        }
+
+        if (other.CompareTag("RagdollPart"))
+        {
+            Debug.Log("KEK");
+            var rb = other.GetComponent<Rigidbody>();
+            rb.AddForce(Vector3.forward * _blowStrength, ForceMode.Impulse);
             Destroy(gameObject);
         }
     }
